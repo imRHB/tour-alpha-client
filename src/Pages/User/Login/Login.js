@@ -1,18 +1,37 @@
+import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import useFirebase from '../../../hooks/useFirebase';
 import './Login.css';
 
+const googleIcon = <FontAwesomeIcon icon={faGoogle} />;
+const githubIcon = <FontAwesomeIcon icon={faGithub} />;
+
 const Login = () => {
-    const { user, signInWithGoogle, logout } = useFirebase();
+    const { user, signInWithGoogle, signInWithGithub, logout } = useFirebase();
 
     return (
-        <div className="container my-5">
-            <h4>this is login</h4>
-            {
-                user.email ? <button className="btn btn-secondary" onClick={logout}>Logout</button>
-                    :
-                    <button className="btn btn-secondary" onClick={signInWithGoogle}>Login with Google</button>
-            }
+        <div className="container my-5 form-container">
+            <div className="shadow-sm rounded-3 border border-1 mx-auto user-form">
+                {
+                    user.email ? <div className="text-center my-4">
+                        <h3 className="mb-4 text-primary text-start">Logged in as</h3>
+                        <img src={user.photoURL} alt="" className="user-img" />
+                        <h3 className="text-success mt-2">{user.displayName}</h3>
+                        <p className="text-muted">{user.email}</p>
+                        <button className="btn btn-outline-dark my-3" onClick={logout}>Logout</button>
+                    </div>
+                        : <div>
+                            <h3 className="mb-4 text-primary">Login</h3>
+                            <div className="text-center my-5">
+                                <p>with</p>
+                                <button className="btn btn-outline-secondary fs-4 me-4" onClick={signInWithGoogle}>{googleIcon}</button>
+                                <span className="fs-5 me-4">or</span>
+                                <button className="btn btn-outline-secondary fs-4" onClick={signInWithGithub}>{githubIcon}</button>
+                            </div>
+                        </div>
+                }
+            </div>
         </div>
     );
 };

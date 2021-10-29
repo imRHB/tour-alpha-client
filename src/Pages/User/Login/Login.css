@@ -1,0 +1,12 @@
+.form-container {
+    min-height: 60vh;
+}
+.user-form {
+    max-width: 520px;
+    padding: 48px 24px;
+}
+.user-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 6px;
+}
