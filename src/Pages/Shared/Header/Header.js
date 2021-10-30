@@ -25,9 +25,15 @@ const Header = () => {
                 <Nav>
                     <NavLink to="/home">Home</NavLink>
                     <NavLink to="/tour-package">Tour Package</NavLink>
+                    <NavLink to="/services">Services</NavLink>
                     <NavLink to="/about">About</NavLink>
                     <NavLink to="/blogs">Blogs</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
+                    {
+                        user?.email ? <NavLink to="/dashboard">Dashboard</NavLink>
+                            :
+                            ''
+                    }
                 </Nav>
 
                 {user?.email ? <div className="d-flex align-items-center my-2 my-md-0">

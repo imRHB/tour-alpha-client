@@ -1,23 +1,27 @@
-import React from 'react';
-import { useHistory } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import Package from '../Package/Package';
 
 const TourPackage = () => {
-    const history = useHistory();
+    const [packages, setPackages] = useState([]);
 
-    const handlePackageDetails = () => {
-        history.push('/package-details');
-    }
+    useEffect(() => {
+        fetch('http://localhost:5000/packages')
+            .then(res => res.json())
+            .then(data => setPackages(data));
+    }, []);
 
     return (
         <div className="container my-5">
-            <h3>this is tour package</h3>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
-            <button className="btn btn-outline-primary" onClickCapture={handlePackageDetails}>Details</button>
+            <h2>Featured Packages</h2>
+            <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+                {
+                    packages.map(packg => <Package
+                        key={packg._id}
+                        packg={packg}
+                    ></Package>)
+                }
+            </Row>
         </div>
     );
 };

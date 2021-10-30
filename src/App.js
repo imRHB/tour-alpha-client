@@ -14,6 +14,8 @@ import Login from './Pages/User/Login/Login';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Register from './Pages/User/Register/Register';
 import './App.css';
+import Services from './Pages/AlphaService/Services/Services';
+import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
             <PrivateRoute path='/package-details'>
               <PackageDetails></PackageDetails>
             </PrivateRoute>
+            <Route path="/services">
+              <Services></Services>
+            </Route>
             <Route path="/about">
               <About></About>
             </Route>
@@ -44,6 +49,9 @@ function App() {
             <Route path="/contact">
               <Contact></Contact>
             </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
