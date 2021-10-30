@@ -2,7 +2,7 @@ import React from 'react';
 import TourPackage from '../../TourAlphaPackage/TourPackage/TourPackage';
 import Activity from '../Activity/Activity';
 import Banner from '../Banner/Banner';
-import DiscountOffer from '../DiscountOffer/DiscountOffer';
+import DiscountItems from '../DiscountOffer/DiscountItems/DiscountItems';
 import TeamMember from '../Team/TeamMember/TeamMember';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <TourPackage></TourPackage>
-            <DiscountOffer></DiscountOffer>
+            <DiscountItems></DiscountItems>
             <TeamMember></TeamMember>
             <Activity></Activity>
         </div>

@@ -22,31 +22,31 @@ const Activity = () => {
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">
                         <img src={act2} alt="" />
-                        <p className="fs-5 fw-bold mt-2">Adventure</p>
+                        <p className="fs-5 fw-bold mt-2">Trekking</p>
                     </div>
                 </Col>
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">
                         <img src={act3} alt="" />
-                        <p className="fs-5 fw-bold mt-2">Adventure</p>
+                        <p className="fs-5 fw-bold mt-2">Camp Fire</p>
                     </div>
                 </Col>
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">
                         <img src={act4} alt="" />
-                        <p className="fs-5 fw-bold mt-2">Adventure</p>
+                        <p className="fs-5 fw-bold mt-2">Off Road</p>
                     </div>
                 </Col>
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">
                         <img src={act5} alt="" />
-                        <p className="fs-5 fw-bold mt-2">Adventure</p>
+                        <p className="fs-5 fw-bold mt-2">Camping</p>
                     </div>
                 </Col>
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">
                         <img src={act6} alt="" />
-                        <p className="fs-5 fw-bold mt-2">Adventure</p>
+                        <p className="fs-5 fw-bold mt-2">Exploring</p>
                     </div>
                 </Col>
             </Row>

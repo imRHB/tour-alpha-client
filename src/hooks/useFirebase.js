@@ -7,7 +7,8 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true);
 
     const auth = getAuth();
 
@@ -30,23 +31,23 @@ const useFirebase = () => {
             else {
                 setUser({});
             }
+            setLoading(false);
             return () => unsubscribed;
         })
     }, []);
 
     const logout = () => {
-        signOut(auth)
-            .then(() => {
+        return signOut(auth);
+        /* .then(() => {
 
-            })
-            .catch(error => {
-                setError(error.message);
-            })
+        })
+        .catch(error => {
+            setError(error.message);
+        }) */
     }
 
     return {
         user,
-        error,
         signInWithGoogle,
         signInWithGithub,
         logout
