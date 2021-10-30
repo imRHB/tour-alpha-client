@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const Service = (props) => {
-    console.log(props)
     const { itemTitle, itemImg } = props.service;
     return (
         <Col>

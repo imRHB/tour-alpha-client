@@ -21,6 +21,7 @@ const Login = () => {
             .then(result => {
                 history.push(redirect_uri);
             })
+
     };
 
     const handleGithubLogin = () => {

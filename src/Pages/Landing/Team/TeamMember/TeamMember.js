@@ -15,8 +15,8 @@ const TeamMember = () => {
 
     return (
         <div className="container my-5">
-            <h2>Leading Person</h2>
-            <Row xs={1} md={2} lg={3} xl={3} className="g-5">
+            <h2 className="text-center fs-1 fw-bold text-secondary my-5">Our Team and Guide</h2>
+            <Row xs={1} sm={2} md={3} lg={6} xl={6} className="g-3">
                 {
                     team.map(member => <Member
                         key={member._id}

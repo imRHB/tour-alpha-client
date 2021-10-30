@@ -13,7 +13,7 @@ const TourPackage = () => {
 
     return (
         <div className="container my-5">
-            <h2>Featured Packages</h2>
+            <h2 className="text-center fs-1 fw-bold text-secondary my-5">Featured Packages</h2>
             <Row xs={1} md={2} lg={3} xl={4} className="g-4">
                 {
                     packages.map(packg => <Package

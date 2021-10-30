@@ -24,7 +24,7 @@ const Header = () => {
                 <img src={logo} alt="logo" style={{ width: '48px', padding: '4px' }} />
                 <Nav>
                     <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/tour-package">Tour Package</NavLink>
+                    <NavLink to="/package">Tour Package</NavLink>
                     <NavLink to="/services">Services</NavLink>
                     <NavLink to="/about">About</NavLink>
                     <NavLink to="/blogs">Blogs</NavLink>

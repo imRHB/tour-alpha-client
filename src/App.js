@@ -14,7 +14,7 @@ import Login from './Pages/User/Login/Login';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Register from './Pages/User/Register/Register';
 import './App.css';
-import Services from './Pages/AlphaService/Services/Services';
+// import Services from './Pages/AlphaService/Services/Services';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
 
 function App() {
@@ -31,15 +31,15 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/tour-package">
+            <Route exact path="/package">
               <TourPackage></TourPackage>
             </Route>
-            <PrivateRoute path='/package-details'>
+            <PrivateRoute exact path="/package-details">
               <PackageDetails></PackageDetails>
             </PrivateRoute>
-            <Route path="/services">
+            {/* <Route path="/services">
               <Services></Services>
-            </Route>
+            </Route> */}
             <Route path="/about">
               <About></About>
             </Route>

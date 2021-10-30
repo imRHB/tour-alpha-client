@@ -16,22 +16,10 @@ const useFirebase = () => {
 
     const signInWithGoogle = () => {
         return signInWithPopup(auth, googleProvider);
-        /* .then(result => {
-            setUser(result.user);
-        })
-        .catch(error => {
-            setError(error.message);
-        }) */
     };
 
     const signInWithGithub = () => {
         return signInWithPopup(auth, githubProvider);
-        /* .then(result => {
-            setUser(result.user);
-        })
-        .catch(error => {
-            setError(error.message);
-        }) */
     };
 
     useEffect(() => {
