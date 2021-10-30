@@ -16,6 +16,7 @@ import Register from './Pages/User/Register/Register';
 import './App.css';
 // import Services from './Pages/AlphaService/Services/Services';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
+import AddPackage from './Pages/User/Dashboard/AddPackage/AddPackage';
 
 function App() {
 
@@ -31,15 +32,15 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/package">
+            <Route exact path="/packages">
               <TourPackage></TourPackage>
             </Route>
-            <PrivateRoute exact path="/package-details">
+            <Route exact path="/packages/details/:packgId">
               <PackageDetails></PackageDetails>
-            </PrivateRoute>
-            {/* <Route path="/services">
-              <Services></Services>
-            </Route> */}
+            </Route>
+            <Route path="/add-package">
+              <AddPackage></AddPackage>
+            </Route>
             <Route path="/about">
               <About></About>
             </Route>
