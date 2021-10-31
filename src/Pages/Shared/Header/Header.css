@@ -1,14 +1,14 @@
 .navbar {
     padding: 0;
 }
-.navbar a {
+.navbar-nav a {
     font-size: 18px;
     font-weight: 400;
     color: blueviolet;
     text-decoration: none;
     padding: 8px 12px;
 }
-.navbar a:hover {
+.navbar-nav a:hover {
     /* color: blue; */
     background-color: #eee;
 }

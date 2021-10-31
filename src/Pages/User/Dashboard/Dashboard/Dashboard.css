@@ -5,11 +5,11 @@
     color: #333;
     background-color: #eef;
 }
-.nav a {
+.dash-nav a {
     font-size: 18px;
     text-decoration: none;
     padding: 8px 12px;
 }
-.nav a:hover {
+.dash-nav a:hover {
     background-color: #eef;
 }

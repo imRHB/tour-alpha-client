@@ -1,10 +1,10 @@
-import { faFacebookSquare, faInstagramSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookSquare, faInstagramSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../../images/logo.png';
 
@@ -13,6 +13,7 @@ const phoneIcon = <FontAwesomeIcon icon={faPhoneSquareAlt} />;
 const facebookIcon = <FontAwesomeIcon icon={faFacebookSquare} />;
 const instagramIcon = <FontAwesomeIcon icon={faInstagramSquare} />;
 const twitterIcon = <FontAwesomeIcon icon={faTwitterSquare} />;
+const linkedInIcon = <FontAwesomeIcon icon={faLinkedin} />;
 
 const Footer = () => {
     return (
@@ -28,19 +29,20 @@ const Footer = () => {
                     </Col>
                     <Col>
                         <p className="fs-4 text-info">EXPLORE</p>
-                        <Nav className="d-flex flex-column">
-                            <Nav.Link as={Link} to="/packages" className="fs-5">Packages</Nav.Link>
-                            <Nav.Link as={Link} to="/about" className="fs-5">About</Nav.Link>
-                            <Nav.Link as={Link} to="#" className="fs-5">Blogs</Nav.Link>
-                            <Nav.Link as={Link} to="/contact" className="fs-5">Contact</Nav.Link>
+                        <Nav className="d-flex flex-column footer-link">
+                            <Link to="/packages" className="fs-5">Packages</Link>
+                            <Link to="/about" className="fs-5">About</Link>
+                            <Link to="#" className="fs-5">Blogs</Link>
+                            <Link to="/contact" className="fs-5">Contact</Link>
                         </Nav>
                     </Col>
                     <Col>
                         <p className="fs-4 text-info">SOCIAL</p>
-                        <Nav className="gap-3">
-                            <Nav.Link href="https://www.facebook.com/" target="_blank" className="fs-3">{facebookIcon}</Nav.Link>
-                            <Nav.Link href="https://www.instagram.com/" target="_blank" className="fs-3">{instagramIcon}</Nav.Link>
-                            <Nav.Link href="https://www.twitter.com/" target="_blank" className="fs-3">{twitterIcon}</Nav.Link>
+                        <Nav className="gap-3 footer-link-social">
+                            <Nav.Link href="https://www.facebook.com/" target="_blank" className="fs-2">{facebookIcon}</Nav.Link>
+                            <Nav.Link href="https://www.instagram.com/" target="_blank" className="fs-2">{instagramIcon}</Nav.Link>
+                            <Nav.Link href="https://www.twitter.com/" target="_blank" className="fs-2">{twitterIcon}</Nav.Link>
+                            <Nav.Link href="https://www.linkedin.com/" target="_blank" className="fs-2">{linkedInIcon}</Nav.Link>
                         </Nav>
                     </Col>
                     <Col>

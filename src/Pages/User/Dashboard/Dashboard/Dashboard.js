@@ -12,7 +12,7 @@ const Dashboard = () => {
 
             <Row xs={12} sm={12} md={8} lg={8}>
                 <Col className="col-md-12 col-lg-4 col-xl-4">
-                    <Nav className="flex-column">
+                    <Nav className="flex-column dash-nav">
                         <NavLink to="/manage-packages">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
                         <NavLink to="/my-Booking">My Booking</NavLink>

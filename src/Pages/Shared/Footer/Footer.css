@@ -1,6 +1,10 @@
-.nav-link {
-    padding: 0;
+.footer-link a, .footer-link-social a {
+    color: blueviolet;
+    text-decoration: none;
 }
-.nav-link:hover {
-    color: #fff;
+.footer-link a:hover, .footer-link-social a:hover {
+    color: lightblue;
+}
+.footer-link-social a {
+    padding: 0;
 }
