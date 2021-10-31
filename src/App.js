@@ -20,6 +20,7 @@ import DiscountPackDetails from './Pages/Details/DiscountPackDetails/DiscountPac
 import './App.css';
 import MyBooking from './Pages/User/Dashboard/MyBooking/MyBooking';
 import AllBooking from './Pages/User/Dashboard/AllBooking/AllBooking';
+import ManagePackages from './Pages/User/Dashboard/ManagePackages/ManagePackages';
 
 function App() {
 
@@ -47,17 +48,18 @@ function App() {
             <Route exact path="/discount-package/:packgId">
               <DiscountPackDetails></DiscountPackDetails>
             </Route>
-            <PrivateRoute path="/add-package">
-              <AddPackage></AddPackage>
-            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
+
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/manage-packages">
+              <ManagePackages></ManagePackages>
             </PrivateRoute>
             <PrivateRoute path="/my-booking">
               <MyBooking></MyBooking>
@@ -65,12 +67,17 @@ function App() {
             <PrivateRoute path="/all-booking">
               <AllBooking></AllBooking>
             </PrivateRoute>
+            <PrivateRoute path="/add-package">
+              <AddPackage></AddPackage>
+            </PrivateRoute>
+
             <Route path="/login">
               <Login></Login>
             </Route>
             <Route path="/register">
               <Register></Register>
             </Route>
+
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>

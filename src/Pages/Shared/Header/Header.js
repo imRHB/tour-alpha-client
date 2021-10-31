@@ -4,7 +4,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 import './Header.css';
 import logo from '../../../images/logo.png';
 import useFirebase from '../../../hooks/useFirebase';
-import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const { user, logout } = useFirebase();
@@ -32,9 +31,6 @@ const Header = () => {
                     {
                         user?.email ? <>
                             <NavLink to="/dashboard">Dashboard</NavLink>
-                            {/* <NavLink to="/add-package">Add Package</NavLink>
-                            <NavLink to="/my-booking">My Booking</NavLink>
-                            <NavLink to="/all-booking">All Booking</NavLink> */}
                         </>
                             : ''
                     }

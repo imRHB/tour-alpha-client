@@ -22,7 +22,7 @@ const DiscountPackDetails = () => {
             <Row xs={1} md={1} xl={2} className="g-4">
                 <h1 className="fs-2 fw-bold text-info text-uppercase">{title}</h1>
 
-                <Col className="col-md-12 col-lg-8 col-xl-8 ">
+                <Col className="col-md-12 col-lg-8 col-xl-8">
                     <div className="rounded-3">
                         <img className="img-fluid rounded-3" src={img} alt="" />
                         <div className="my-4">
@@ -66,15 +66,6 @@ const DiscountPackDetails = () => {
                     </div>
                 </Col>
             </Row>
-
-            <div className="row">
-
-
-
-                <div className="col-4 my-3">
-
-                </div>
-            </div>
         </div>
     );
 };
