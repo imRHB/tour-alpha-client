@@ -12,7 +12,22 @@ const MyBooking = () => {
         fetch('http://localhost:5000/booked-packages')
             .then(res => res.json())
             .then(data => setBookedPacks(data));
-    }, []);
+    }, [bookedPacks]);
+
+    const handleBookedPack = packgId => {
+        const removeConfirmation = window.confirm('Do you really want to removed the package from queue?');
+
+        if (removeConfirmation) {
+            const bookedPackUrl = `http://localhost:5000/booked-packages/${packgId}`;
+            fetch(bookedPackUrl, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert('Package removed from queue.');
+                })
+        }
+    };
 
     return (
         <div className="container my-5">
@@ -53,7 +68,7 @@ const MyBooking = () => {
                                         <td>{bookedPack.location}</td>
                                         <td>Pending</td>
                                         <td><button className="btn btn-success">Approve</button></td>
-                                        <td><button className="btn btn-danger">Remove</button></td>
+                                        <td><button onClick={() => handleBookedPack(bookedPack._id)} className="btn btn-danger">Remove</button></td>
                                     </tr>)
                                 }
                             </tbody>
