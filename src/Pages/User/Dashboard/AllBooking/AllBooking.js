@@ -7,7 +7,6 @@ const AllBooking = () => {
     const [bookedPacks, setBookedPacks] = useState([]);
 
     const { user } = useAuth();
-    console.log(user);
 
     useEffect(() => {
         fetch('http://localhost:5000/booked-packages')
@@ -23,7 +22,7 @@ const AllBooking = () => {
             <Row xs={12} sm={12} md={8} lg={8}>
 
                 <Col className="col-md-12 col-lg-4 col-xl-4">
-                    <Nav className="flex-column">
+                    <Nav className="flex-column dash-nav">
                         <NavLink to="/dashboard">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
                         <NavLink to="/my-Booking">My Booking</NavLink>
@@ -43,7 +42,7 @@ const AllBooking = () => {
                                     <th scope="col">Location</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
-                                    <th scope="col">Delete</th>
+                                    <th scope="col">Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,7 +54,7 @@ const AllBooking = () => {
                                         <td>{bookedPack.location}</td>
                                         <td>Pending</td>
                                         <td><button className="btn btn-success">Approve</button></td>
-                                        <td><button className="btn btn-danger">Delete</button></td>
+                                        <td><button className="btn btn-danger">Remove</button></td>
                                     </tr>)
                                 }
                             </tbody>

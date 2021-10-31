@@ -34,7 +34,7 @@ const ManagePackages = () => {
 
             <Row xs={12} sm={12} md={8} lg={8}>
                 <Col className="col-md-12 col-lg-4 col-xl-4">
-                    <Nav className="flex-column">
+                    <Nav className="flex-column dash-nav">
                         <NavLink to="/dashboard">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
                         <NavLink to="/my-Booking">My Booking</NavLink>
@@ -51,8 +51,8 @@ const ManagePackages = () => {
                                     <th scope="col">#</th>
                                     <th scope="col">Package Name</th>
                                     <th scope="col">Location</th>
-                                    <th scope="col">Fee</th>
-                                    <th scope="col">Manage</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
