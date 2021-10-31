@@ -28,9 +28,18 @@ const useFirebase = () => {
             })
     };
 
-    /* const signInWithGithub = () => {
-        return signInWithPopup(auth, githubProvider);
-    }; */
+    const signInWithGithub = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                setUser(result.user);
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    };
 
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
@@ -57,14 +66,14 @@ const useFirebase = () => {
             .finally(() => {
                 setLoading(false);
             })
-    }
+    };
 
     return {
         user,
         error,
         loading,
         signInWithGoogle,
-        // signInWithGithub,
+        signInWithGithub,
         logout
     }
 };

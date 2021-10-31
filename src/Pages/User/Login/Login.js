@@ -9,7 +9,7 @@ const googleIcon = <FontAwesomeIcon icon={faGoogle} />;
 const githubIcon = <FontAwesomeIcon icon={faGithub} />;
 
 const Login = () => {
-    const { user, signInWithGoogle, logout } = useAuth();
+    const { user, signInWithGoogle, signInWithGithub, logout } = useAuth();
 
     const history = useHistory();
     const location = useLocation();
@@ -63,7 +63,7 @@ const Login = () => {
                                 <p>with</p>
                                 <button className="btn btn-outline-secondary fs-4 me-4" onClick={signInWithGoogle}>{googleIcon}</button>
                                 <span className="fs-5 me-4">or</span>
-                                {/* <button className="btn btn-outline-secondary fs-4" onClick={handleGithubLogin}>{githubIcon}</button> */}
+                                <button className="btn btn-outline-secondary fs-4" onClick={signInWithGithub}>{githubIcon}</button>
                             </div>
                         </div>
                 }
