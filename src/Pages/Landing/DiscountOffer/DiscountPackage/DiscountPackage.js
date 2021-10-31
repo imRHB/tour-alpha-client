@@ -17,7 +17,7 @@ const DiscountPackage = (props) => {
                     </Card.Text>
                     <Card.Text>
                         <div className="d-flex justify-content-between fs-3 fw-bold">
-                            <p className="text-info">${offerPrice}</p>
+                            <p className="text-info">${offerPrice}<span className="fs-6 fw-normal"><small>/per person</small></span></p>
                             <p className="text-danger"><strike>${price}</strike></p>
                         </div>
                     </Card.Text>

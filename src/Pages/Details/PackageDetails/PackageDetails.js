@@ -30,7 +30,7 @@ const PackageDetails = () => {
                 <div className="col-4 my-3">
                     <div className="bg-dark text-light p-4 rounded-3">
                         <p className="fs-4 fw-bold">{location}</p>
-                        <h2>${price} <span className="fs-6">/per person</span></h2>
+                        <h2>${price}<span className="fs-6">/per person</span></h2>
                         <p>{day} DAYS / {night} NIGHT</p>
                         <p>{people} People</p>
                         <Link to={`/packages/booking/${packgId}`}>

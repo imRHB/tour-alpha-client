@@ -15,8 +15,9 @@ import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Register from './Pages/User/Register/Register';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
 import AddPackage from './Pages/User/Dashboard/AddPackage/AddPackage';
-import './App.css';
 import DiscountPackages from './Pages/Landing/DiscountOffer/DiscountPackages/DiscountPackages';
+import DiscountPackDetails from './Pages/Details/DiscountPackDetails/DiscountPackDetails';
+import './App.css';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
               <DiscountPackages></DiscountPackages>
             </Route>
             <Route exact path="/discount-package/:packgId">
-              <PackageDetails></PackageDetails>
+              <DiscountPackDetails></DiscountPackDetails>
             </Route>
             <PrivateRoute path="/add-package">
               <AddPackage></AddPackage>
