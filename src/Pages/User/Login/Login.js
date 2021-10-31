@@ -16,36 +16,6 @@ const Login = () => {
 
     const redirect_uri = location.state?.from || '/home';
 
-    /* const handleGoogleLogin = () => {
-        setLoading(true);
-        signInWithGoogle()
-            .then(result => {
-                history.push(redirect_uri);
-            })
-            .finally(() => setLoading(false));
-
-    }; */
-
-    /* const handleGithubLogin = () => {
-        signInWithGithub()
-            .then(result => {
-                history.push(redirect_uri);
-            })
-    }; */
-
-    /* const handleGoogleLogin = () => {
-        signInWithGoogle();
-    } */
-
-    /* const handleLogout = () => {
-        setLoading(true);
-        logout()
-            .then(() => {
-
-            })
-            .finally(() => setLoading(false));
-    } */
-
     return (
         <div className="container my-5 form-container">
             <div className="shadow-sm rounded-3 border border-1 mx-auto user-form">

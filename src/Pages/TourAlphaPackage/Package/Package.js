@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Package = (props) => {
     const { _id, title, location, img, description, price, day, night } = props.packg;
     const [bookedPack, setBookedPack] = useState({});
-    console.log(bookedPack);
 
     const handleBookPackage = packgId => {
         const url = `http://localhost:5000/packages/${packgId}`;
