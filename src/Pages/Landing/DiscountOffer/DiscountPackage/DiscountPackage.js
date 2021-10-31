@@ -26,10 +26,6 @@ const DiscountPackage = (props) => {
                             <Link to={`/discount-package/${_id}`}>
                                 <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            {/* <Link to={`/packages/booking/${_id}`}>
-                                <button className="btn btn-outline-success">Book Now</button>
-                            </Link> */}
-                            <button className="btn btn-outline-success">Book Now</button>
                         </div>
                     </Card.Text>
                 </Card.Body>

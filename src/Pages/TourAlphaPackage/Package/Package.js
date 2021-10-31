@@ -5,19 +5,6 @@ import { Link } from 'react-router-dom';
 const Package = (props) => {
     const { _id, title, location, img, description, price, day, night } = props.packg;
 
-    const handlePackageBooking = (packgId) => {
-        console.log(packgId);
-        /* fetch(`http://localhost:5000/packages/${packgId}`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify()
-        })
-            .then(res => res.json())
-            .then(data => console.log(data)); */
-    };
-
     return (
         <Col>
             <Card className="h-100 rounded-3">
@@ -39,7 +26,6 @@ const Package = (props) => {
                             <Link to={`/packages/${_id}`}>
                                 <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            <button onClick={() => handlePackageBooking(_id)} className="btn btn-outline-success">Book Now</button>
                         </div>
                     </Card.Text>
                 </Card.Body>

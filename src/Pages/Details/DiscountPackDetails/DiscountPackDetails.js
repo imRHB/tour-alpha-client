@@ -15,6 +15,19 @@ const DiscountPackDetails = () => {
             .then(data => setDiskPack(data));
     }, []);
 
+    const handlePackageBooking = diskPack => {
+        fetch(`http://localhost:5000/booked-packages`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(diskPack)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result));
+        alert('You\'ve booked the package successfully. Check in all booking page.');
+    };
+
     return (
         <div className="container my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Package Details</h2>
@@ -40,7 +53,7 @@ const DiscountPackDetails = () => {
                         <h2>${offerPrice}<span className="fs-6">/per person</span></h2>
                         <p>{day} DAYS / {night} NIGHT</p>
                         <p>{people} People</p>
-                        <button className="btn btn-outline-light">Book Now</button>
+                        <button onClick={() => handlePackageBooking(diskPack)} className="btn btn-outline-light">Book Now</button>
                     </div>
                     <div className="bg-light my-3 px-2 py-4 rounded-3">
                         <p className="text-center fs-4 fw-bold text-danger">Travel Safety Tips</p>

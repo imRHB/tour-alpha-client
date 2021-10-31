@@ -24,7 +24,7 @@ const PackageDetails = () => {
         })
             .then(res => res.json())
             .then(result => console.log(result));
-        alert('You booked the package successfully.');
+        alert('You\'ve booked the package successfully. Check in all booking page.');
     };
 
     return (
