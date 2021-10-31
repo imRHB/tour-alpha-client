@@ -7,9 +7,23 @@ const ManagePackages = () => {
         fetch('http://localhost:5000/packages')
             .then(res => res.json())
             .then(data => setPackages(data));
-    }, []);
+    }, [packages]);
 
+    // Delete Package
+    const handleDeletePackage = packgId => {
+        const deleteConfirmation = window.confirm('Do you really want to delete the package? It can\'t bt undone.');
 
+        if (deleteConfirmation) {
+            const packgUrl = `http://localhost:5000/packages/${packgId}`;
+            fetch(packgUrl, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert('Package deleted successfully.');
+                })
+        }
+    };
 
     return (
         <div className="container">
@@ -32,7 +46,7 @@ const ManagePackages = () => {
                                 <td>{packg.title}</td>
                                 <td>{packg.location}</td>
                                 <td><button className="btn btn-success">Update</button></td>
-                                <td><button className="btn btn-danger">Delete</button></td>
+                                <td><button onClick={() => handleDeletePackage(packg._id)} className="btn btn-danger">Delete</button></td>
                             </tr>
                         ))
                     }
