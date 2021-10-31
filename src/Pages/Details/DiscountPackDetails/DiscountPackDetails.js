@@ -40,9 +40,7 @@ const DiscountPackDetails = () => {
                         <h2>${offerPrice}<span className="fs-6">/per person</span></h2>
                         <p>{day} DAYS / {night} NIGHT</p>
                         <p>{people} People</p>
-                        <Link to={`/packages/booking/${packgId}`}>
-                            <button className="btn btn-outline-light">Book Now</button>
-                        </Link>
+                        <button className="btn btn-outline-light">Book Now</button>
                     </div>
                     <div className="bg-light my-3 px-2 py-4 rounded-3">
                         <p className="text-center fs-4 fw-bold text-danger">Travel Safety Tips</p>

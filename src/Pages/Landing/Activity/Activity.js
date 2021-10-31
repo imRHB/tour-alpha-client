@@ -12,6 +12,7 @@ const Activity = () => {
     return (
         <div className="container -my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5 text-uppercase">Adventure and Activity</h2>
+
             <Row xs={1} sm={2} md={3} lg={3} xl={6} className="g-4 g-lg-5 g-xl-4">
                 <Col className="h-100">
                     <div className="text-center p-3 rounded-3 activity-item">

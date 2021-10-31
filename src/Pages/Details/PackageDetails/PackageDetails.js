@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const PackageDetails = () => {
     const { packgId } = useParams();
@@ -13,6 +13,19 @@ const PackageDetails = () => {
             .then(res => res.json())
             .then(data => setPackage(data));
     }, []);
+
+    const handlePackageBooking = packg => {
+        fetch(`http://localhost:5000/booked-packages`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(packg)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result));
+        alert('You booked the package successfully.');
+    };
 
     return (
         <div className="container my-5">
@@ -38,9 +51,7 @@ const PackageDetails = () => {
                         <h2>${price}<span className="fs-6">/per person</span></h2>
                         <p>{day} DAYS / {night} NIGHT</p>
                         <p>{people} People</p>
-                        <Link to={`/packages/booking/${packgId}`}>
-                            <button className="btn btn-outline-light">Book Now</button>
-                        </Link>
+                        <button onClick={() => handlePackageBooking(packg)} className="btn btn-outline-light">Book Now</button>
                     </div>
                     <div className="bg-light my-3 px-2 py-4 rounded-3">
                         <p className="text-center fs-4 fw-bold text-danger">Travel Safety Tips</p>

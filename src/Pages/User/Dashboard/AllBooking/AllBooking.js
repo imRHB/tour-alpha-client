@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 
 const AllBooking = () => {
+    const [bookedPacks, setBookedPacks] = useState([]);
+
+    const { user } = useAuth();
+    console.log(user);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/booked-packages')
+            .then(res => res.json())
+            .then(data => setBookedPacks(data));
+    }, []);
 
     return (
         <div className="container my-5">
@@ -10,6 +21,7 @@ const AllBooking = () => {
             <hr />
 
             <Row xs={12} sm={12} md={8} lg={8}>
+
                 <Col className="col-md-12 col-lg-4 col-xl-4">
                     <Nav className="flex-column">
                         <NavLink to="/dashboard">Manage Packages</NavLink>
@@ -21,7 +33,7 @@ const AllBooking = () => {
 
                 <Col className="col-md-12 col-lg-8 col-xl-8">
                     <div className="bg-light">
-                        <h3 className="text-center fs-3 fw-bold text-info py-4">All Booking</h3>
+                        <h3 className="text-center fs-3 fw-bold text-info py-4">All Booking {bookedPacks.length}</h3>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -30,18 +42,22 @@ const AllBooking = () => {
                                     <th scope="col">Email</th>
                                     <th scope="col">Location</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>abc@xyz.com</td>
-                                    <td>Canada</td>
-                                    <td>Pending</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
+                                {
+                                    bookedPacks.map((bookedPack, index) => <tr>
+                                        <th scope="row">{index + 1}</th>
+                                        <td>{bookedPack.title}</td>
+                                        <td>{user?.email}</td>
+                                        <td>{bookedPack.location}</td>
+                                        <td>Pending</td>
+                                        <td><button className="btn btn-success">Approve</button></td>
+                                        <td><button className="btn btn-danger">Delete</button></td>
+                                    </tr>)
+                                }
                             </tbody>
                         </table>
                     </div>

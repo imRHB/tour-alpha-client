@@ -51,7 +51,7 @@ const ManagePackages = () => {
                                     <th scope="col">#</th>
                                     <th scope="col">Package Name</th>
                                     <th scope="col">Location</th>
-                                    <th scope="col">Update</th>
+                                    <th scope="col">Fee</th>
                                     <th scope="col">Manage</th>
                                 </tr>
                             </thead>
@@ -62,7 +62,7 @@ const ManagePackages = () => {
                                             <th scope="row">{index + 1}</th>
                                             <td>{packg.title}</td>
                                             <td>{packg.location}</td>
-                                            <td><button className="btn btn-success">Update</button></td>
+                                            <td>${packg.price}</td>
                                             <td><button onClick={() => handleDeletePackage(packg._id)} className="btn btn-danger">Delete</button></td>
                                         </tr>
                                     ))

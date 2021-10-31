@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
     const { _id, title, location, img, description, price, day, night } = props.packg;
-    const [bookedPack, setBookedPack] = useState({});
 
-    const handleBookPackage = packgId => {
-        const url = `http://localhost:5000/packages/${packgId}`;
-        fetch(url, {
-
+    const handlePackageBooking = (packgId) => {
+        console.log(packgId);
+        /* fetch(`http://localhost:5000/packages/${packgId}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
         })
             .then(res => res.json())
-            .then(result => setBookedPack(result));
-    }
+            .then(data => console.log(data)); */
+    };
 
     return (
         <Col>
@@ -36,7 +39,7 @@ const Package = (props) => {
                             <Link to={`/packages/${_id}`}>
                                 <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            <button onClick={() => handleBookPackage(_id)} className="btn btn-outline-success">Book Now</button>
+                            <button onClick={() => handlePackageBooking(_id)} className="btn btn-outline-success">Book Now</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
