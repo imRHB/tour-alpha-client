@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="container">
                 <Row xs={1} md={2} lg={4} className="g-3">
                     <Col>
-                        <p className="fs-3 fw-bold text-warning"><span><img className="me-3" src={logo} alt="logo" style={{ width: '40px', height: '40px' }} /></span>TOUR ALPHA</p>
+                        <p className="fs-3 fw-bold text-danger"><span><img className="me-3" src={logo} alt="logo" style={{ width: '40px', height: '40px' }} /></span>TOUR ALPHA</p>
                         <p><span className="me-2">{phoneIcon}</span> 012 3456 789</p>
                         <p><span className="me-2">{envelopeIcon}</span> info@tour-alpha.web.app</p>
                         <p><span className="me-2">{envelopeIcon}</span> help@tour-alpha.web.app</p>

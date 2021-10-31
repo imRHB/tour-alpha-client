@@ -30,12 +30,11 @@ const Header = () => {
                     <NavLink to="/contact">Contact</NavLink>
 
                     {
-                        user?.email ? <div>
+                        user?.email ? <>
                             <NavLink to="/dashboard">Dashboard</NavLink>
                             <NavLink to="/add-package">Add Package</NavLink>
-                        </div>
-                            :
-                            ''
+                        </>
+                            : ''
                     }
                 </Nav>
 
