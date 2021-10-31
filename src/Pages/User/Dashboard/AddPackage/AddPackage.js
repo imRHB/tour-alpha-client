@@ -20,19 +20,19 @@ const AddPackage = () => {
     };
 
     return (
-        <div className="container">
-            <h3 className="text-center fs-3 fw-bold text-info mb-4">Add New Tour Package</h3>
+        <div className="">
+            <h3 className="text-center fs-3 fw-bold text-info py-4">Add New Tour Package</h3>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="add-package-form">
+            <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
                 <input {...register("title", { required: true })} placeholder="Tour package title" />
                 <input {...register("location", { required: true })} placeholder="Tour destination" />
                 <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
-                <input {...register("description", { required: true })} placeholder="Tour description" />
+                <textarea {...register("description", { required: true })} placeholder="Tour description" />
                 <input type="number" {...register("price", { required: true })} placeholder="Tour package price" />
                 <input type="number" {...register("people", { required: true })} placeholder="Specific number of people for the tour" />
                 <input type="number" {...register("day", { required: true })} placeholder="How many days" />
                 <input type="number" {...register("night", { required: true })} placeholder="How many night" />
-                <input type="submit" value="Add Package" className="btn btn-primary" />
+                <input type="submit" value="Add New Package" className="btn btn-primary" />
             </form>
         </div>
     );
