@@ -1,0 +1,7 @@
+.error-container {
+    height: 60vh;
+}
+.error-url a:hover {
+    background-color: #eef;
+    text-decoration: none;
+}
