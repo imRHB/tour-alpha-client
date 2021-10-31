@@ -5,14 +5,11 @@
     color: #333;
     background-color: #eef;
 }
-
-
-
-
-/* test purpose */
-.test-click p {
-    cursor: pointer;
+.nav a {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 12px;
 }
-.test-click p:hover {
-    background-color: #ddd;
+.nav a:hover {
+    background-color: #eef;
 }

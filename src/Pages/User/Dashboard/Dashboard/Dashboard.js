@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Col, ListGroup, Row } from 'react-bootstrap';
+import { Col, ListGroup, Nav, Row } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import AddPackage from '../AddPackage/AddPackage';
 import AllBooking from '../AllBooking/AllBooking';
 import ManagePackages from '../ManagePackages/ManagePackages';
@@ -12,9 +13,16 @@ const Dashboard = () => {
     return (
         <div className="container my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Dashboard</h2>
+            <hr />
+            <Nav className="my-3">
+                <NavLink to="/dashboard">Manage Packages</NavLink>
+                <NavLink to="/all-booking">All Booking</NavLink>
+                <NavLink to="/my-Booking">My Booking</NavLink>
+                <NavLink to="/add-package">Add Package</NavLink>
+            </Nav>
             <Row>
                 <Col xs={12} sm={6} md={4}>
-                    <div className="bg-dark text-light">
+                    {/* <div className="bg-dark text-light">
                         <ListGroup>
                             <ListGroup.Item onclick={() => setControl('manage-bookings')} className="dash-item">
                                 Manage Bookings
@@ -29,7 +37,7 @@ const Dashboard = () => {
                                 Add New Package
                             </ListGroup.Item>
                         </ListGroup>
-                    </div>
+                    </div> */}
                 </Col>
                 <Col xs={12} sm={6} md={8}>
                     <div className="bg-light">

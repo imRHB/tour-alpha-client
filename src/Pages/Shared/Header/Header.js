@@ -20,9 +20,9 @@ const Header = () => {
 
     return (
         <Navbar bg="light" variant="light">
-            <Container className="">
-                <img src={logo} alt="logo" style={{ width: '48px', height: '48px', padding: '4px' }} />
-                <Nav>
+            <Container className="flex-column flex-sm-row">
+                <img src={logo} alt="logo" style={{ width: '48px', height: '48px', padding: '4px' }} className="my-3 my-md-3 my-lg-0" />
+                <Nav className="flex-column flex-lg-row my-3 my-md-3 my-lg-0">
                     <NavLink to="/home">Home</NavLink>
                     <NavLink to="/packages">Tour Packages</NavLink>
                     <NavLink to="/discount-package">Offers</NavLink>
@@ -32,9 +32,9 @@ const Header = () => {
                     {
                         user?.email ? <>
                             <NavLink to="/dashboard">Dashboard</NavLink>
-                            <NavLink to="/add-package">Add Package</NavLink>
-                            <NavLink to="/my-Booking">My Booking</NavLink>
-                            <NavLink to="/all-booking">All Booking</NavLink>
+                            {/* <NavLink to="/add-package">Add Package</NavLink>
+                            <NavLink to="/my-booking">My Booking</NavLink>
+                            <NavLink to="/all-booking">All Booking</NavLink> */}
                         </>
                             : ''
                     }
@@ -45,7 +45,7 @@ const Header = () => {
                     <img className="mx-2 user-icon" src={user.photoURL} alt="" />
                     <button className="btn btn-outline-dark" onClick={logout}>Logout</button>
                 </div>
-                    : <div>
+                    : <div className="my-3 my-md-3 my-lg-0">
                         <button className="btn btn-outline-secondary me-2" onClick={handleLogin}>Login</button>
                         <button className="btn btn-secondary" onClick={handleRegister}>Register</button>
                     </div>}

@@ -14,7 +14,7 @@ const DiscountPackages = () => {
     return (
         <div className="container my-5">
             <h3 className="text-center fs-1 fw-bold text-secondary my-5">Special Offer and Discount</h3>
-            <Row>
+            <Row xs={1} md={2} lg={3} xl={3} className="g-4">
                 {
                     discountPacks.map(discPack => <DiscountPackage
                         key={discPack._id}

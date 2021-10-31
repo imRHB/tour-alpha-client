@@ -1,5 +1,7 @@
 import React from 'react';
+import { Nav } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { NavLink } from 'react-router-dom';
 import './AddPackage.css';
 
 const AddPackage = () => {
@@ -20,9 +22,14 @@ const AddPackage = () => {
     };
 
     return (
-        <div className="">
+        <div className="container my-5">
             <h3 className="text-center fs-3 fw-bold text-info py-4">Add New Tour Package</h3>
-
+            <Nav className="my-3">
+                <NavLink to="/dashboard">Manage Packages</NavLink>
+                <NavLink to="/all-booking">All Booking</NavLink>
+                <NavLink to="/my-Booking">My Booking</NavLink>
+                <NavLink to="/add-package">Add Package</NavLink>
+            </Nav>
             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
                 <input {...register("title", { required: true })} placeholder="Tour package title" />
                 <input {...register("location", { required: true })} placeholder="Tour destination" />
