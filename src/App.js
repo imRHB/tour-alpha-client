@@ -38,9 +38,9 @@ function App() {
             <Route exact path="/packages/details/:packgId">
               <PackageDetails></PackageDetails>
             </Route>
-            <Route path="/add-package">
+            <PrivateRoute path="/add-package">
               <AddPackage></AddPackage>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>

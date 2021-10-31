@@ -21,17 +21,19 @@ const Header = () => {
     return (
         <Navbar bg="light" variant="light">
             <Container className="">
-                <img src={logo} alt="logo" style={{ width: '48px', padding: '4px' }} />
+                <img src={logo} alt="logo" style={{ width: '48px', height: '48px', padding: '4px' }} />
                 <Nav>
                     <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/packages">Tour Package</NavLink>
+                    <NavLink to="/packages">Tour Packages</NavLink>
                     <NavLink to="/about">About</NavLink>
-                    <NavLink to="/blogs">Blogs</NavLink>
+                    {/* <NavLink to="/blogs">Blogs</NavLink> */}
                     <NavLink to="/contact">Contact</NavLink>
-                    <NavLink to="/add-package">Add Package</NavLink>
 
                     {
-                        user?.email ? <NavLink to="/dashboard">Dashboard</NavLink>
+                        user?.email ? <div>
+                            <NavLink to="/dashboard">Dashboard</NavLink>
+                            <NavLink to="/add-package">Add Package</NavLink>
+                        </div>
                             :
                             ''
                     }
