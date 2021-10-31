@@ -7,7 +7,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    // const [error, setError] = useState('');
+    const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
 
     const auth = getAuth();
@@ -16,12 +16,21 @@ const useFirebase = () => {
     const githubProvider = new GithubAuthProvider();
 
     const signInWithGoogle = () => {
-        return signInWithPopup(auth, googleProvider);
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                setUser(result.user);
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     };
 
-    const signInWithGithub = () => {
+    /* const signInWithGithub = () => {
         return signInWithPopup(auth, githubProvider);
-    };
+    }; */
 
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
@@ -32,24 +41,30 @@ const useFirebase = () => {
                 setUser({});
             }
             setLoading(false);
-            return () => unsubscribed;
         })
+        return () => unsubscribed;
     }, []);
 
     const logout = () => {
-        return signOut(auth);
-        /* .then(() => {
+        setLoading(false);
+        signOut(auth)
+            .then(() => {
 
-        })
-        .catch(error => {
-            setError(error.message);
-        }) */
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     return {
         user,
+        error,
+        loading,
         signInWithGoogle,
-        signInWithGithub,
+        // signInWithGithub,
         logout
     }
 };
