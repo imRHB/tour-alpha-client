@@ -11,7 +11,7 @@ const ManagePackages = () => {
 
     // Delete Package
     const handleDeletePackage = packgId => {
-        const deleteConfirmation = window.confirm('Do you really want to delete the package? It can\'t bt undone.');
+        const deleteConfirmation = window.confirm('Do you really want to delete the package? It can\'t be undone.');
 
         if (deleteConfirmation) {
             const packgUrl = `http://localhost:5000/packages/${packgId}`;

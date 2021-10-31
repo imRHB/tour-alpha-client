@@ -13,10 +13,10 @@ import TourPackage from './Pages/TourAlphaPackage/TourPackage/TourPackage';
 import Login from './Pages/User/Login/Login';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Register from './Pages/User/Register/Register';
-import './App.css';
-// import Services from './Pages/AlphaService/Services/Services';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
 import AddPackage from './Pages/User/Dashboard/AddPackage/AddPackage';
+import './App.css';
+import DiscountPackages from './Pages/Landing/DiscountOffer/DiscountPackages/DiscountPackages';
 
 function App() {
 
@@ -35,7 +35,13 @@ function App() {
             <Route exact path="/packages">
               <TourPackage></TourPackage>
             </Route>
-            <Route exact path="/packages/details/:packgId">
+            <Route exact path="/packages/:packgId">
+              <PackageDetails></PackageDetails>
+            </Route>
+            <Route exact path="/discount-package">
+              <DiscountPackages></DiscountPackages>
+            </Route>
+            <Route exact path="/discount-package/:packgId">
               <PackageDetails></PackageDetails>
             </Route>
             <PrivateRoute path="/add-package">

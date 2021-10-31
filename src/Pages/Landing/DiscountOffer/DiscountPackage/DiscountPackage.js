@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const DiscountItem = (props) => {
-    const { _id, title, img, location, description, price, offerPrice } = props.discItem;
+const DiscountPackage = (props) => {
+    const { _id, title, img, location, description, price, offerPrice } = props.discPack;
 
     return (
         <Col>
@@ -23,12 +23,13 @@ const DiscountItem = (props) => {
                     </Card.Text>
                     <Card.Text>
                         <div className="d-flex justify-content-between">
-                            <Link to={`/packages/details/${_id}`}>
+                            <Link to={`/discount-package/${_id}`}>
                                 <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            <Link to={`/packages/booking/${_id}`}>
+                            {/* <Link to={`/packages/booking/${_id}`}>
                                 <button className="btn btn-outline-success">Book Now</button>
-                            </Link>
+                            </Link> */}
+                            <button className="btn btn-outline-success">Book Now</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -37,4 +38,4 @@ const DiscountItem = (props) => {
     );
 };
 
-export default DiscountItem;
+export default DiscountPackage;

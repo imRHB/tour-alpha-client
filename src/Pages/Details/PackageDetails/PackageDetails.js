@@ -8,13 +8,7 @@ const PackageDetails = () => {
     const { title, location, img, description, price, people, day, night } = packg;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/details/${packgId}`)
-            .then(res => res.json())
-            .then(data => setPackage(data));
-    }, []);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/discount-offers/${packgId}`)
+        fetch(`http://localhost:5000/packages/${packgId}`)
             .then(res => res.json())
             .then(data => setPackage(data));
     }, []);
@@ -68,9 +62,6 @@ const PackageDetails = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div>
-
             </div>
         </div>
     );

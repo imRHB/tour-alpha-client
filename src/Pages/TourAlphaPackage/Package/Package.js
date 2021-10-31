@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Package = (props) => {
     const { _id, title, location, img, description, price, day, night } = props.packg;
+    const [bookedPack, setBookedPack] = useState({});
+    console.log(bookedPack);
+
+    const handleBookPackage = packgId => {
+        const url = `http://localhost:5000/packages/${packgId}`;
+        fetch(url, {
+
+        })
+            .then(res => res.json())
+            .then(result => setBookedPack(result));
+    }
 
     return (
         <Col>
@@ -23,12 +34,10 @@ const Package = (props) => {
                     </Card.Text>
                     <Card.Text>
                         <div className="d-flex justify-content-between">
-                            <Link to={`/packages/details/${_id}`}>
+                            <Link to={`/packages/${_id}`}>
                                 <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            <Link to={`/packages/booking/${_id}`}>
-                                <button className="btn btn-outline-success">Book Now</button>
-                            </Link>
+                            <button onClick={() => handleBookPackage(_id)} className="btn btn-outline-success">Book Now</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
