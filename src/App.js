@@ -18,6 +18,8 @@ import AddPackage from './Pages/User/Dashboard/AddPackage/AddPackage';
 import DiscountPackages from './Pages/Landing/DiscountOffer/DiscountPackages/DiscountPackages';
 import DiscountPackDetails from './Pages/Details/DiscountPackDetails/DiscountPackDetails';
 import './App.css';
+import MyBooking from './Pages/User/Dashboard/MyBooking/MyBooking';
+import AllBooking from './Pages/User/Dashboard/AllBooking/AllBooking';
 
 function App() {
 
@@ -51,14 +53,17 @@ function App() {
             <Route path="/about">
               <About></About>
             </Route>
-            <Route path="/blogs">
-              <Blogs></Blogs>
-            </Route>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/my-booking">
+              <MyBooking></MyBooking>
+            </PrivateRoute>
+            <PrivateRoute path="/all-booking">
+              <AllBooking></AllBooking>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

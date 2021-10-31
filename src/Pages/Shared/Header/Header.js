@@ -27,13 +27,14 @@ const Header = () => {
                     <NavLink to="/packages">Tour Packages</NavLink>
                     <NavLink to="/discount-package">Offers</NavLink>
                     <NavLink to="/about">About</NavLink>
-                    {/* <NavLink to="/blogs">Blogs</NavLink> */}
                     <NavLink to="/contact">Contact</NavLink>
 
                     {
                         user?.email ? <>
                             <NavLink to="/dashboard">Dashboard</NavLink>
                             <NavLink to="/add-package">Add Package</NavLink>
+                            <NavLink to="/my-Booking">My Booking</NavLink>
+                            <NavLink to="/all-booking">All Booking</NavLink>
                         </>
                             : ''
                     }

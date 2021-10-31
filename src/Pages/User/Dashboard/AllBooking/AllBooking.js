@@ -2,7 +2,8 @@ import React from 'react';
 
 const AllBooking = () => {
     return (
-        <div>
+        <div className="container my-5">
+            <h3 className="text-center fs-3 fw-bold text-info py-4">All Booking</h3>
             <table class="table table-hover">
                 <thead>
                     <tr>
