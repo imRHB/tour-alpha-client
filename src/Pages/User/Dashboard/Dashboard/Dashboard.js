@@ -1,32 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, ListGroup, Row } from 'react-bootstrap';
 import AddPackage from '../AddPackage/AddPackage';
 import AllBooking from '../AllBooking/AllBooking';
 import MyBooking from '../MyBooking/MyBooking';
+import './Dashboard.css';
 
 const Dashboard = () => {
+    const [control, setControl] = useState("add-package");
+    console.log(control);
+
     return (
         <div className="container my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Dashboard</h2>
             <Row>
                 <Col xs={12} sm={6} md={4}>
                     <div className="bg-dark text-light">
-                        {/* <MyBooking></MyBooking>
-                        <AllBooking></AllBooking>
-                        <AddPackage></AddPackage> */}
                         {/* <ul>
-                            <li>My Orders</li>
-                            <li>Manage All Orders</li>
-                            <li>Add New Package</li>
+                            <li
+                                onclick={() => setControl("my-orders")}
+                                className="dash-item">
+                                My Orders
+                            </li>
+                            <li onclick={() => setControl("manage-orders")} className="dash-item">
+                                Manage All Orders
+                            </li>
+                            <li onclick={() => setControl("manage-packages")} className="dash-item">
+                                Manage Packages
+                            </li>
+                            <li onclick={() => setControl("add-package")} className="dash-item">
+                                Add New Package
+
+                            </li>
                         </ul> */}
                         <ListGroup>
-                            <ListGroup.Item>
+                            <ListGroup.Item onclick={() => setControl('clicked')} className="dash-item">
                                 My Orders
                             </ListGroup.Item>
-                            <ListGroup.Item>
+                            <ListGroup.Item onclick={() => setControl('manage-orders')} className="dash-item">
                                 Manage All Orders
                             </ListGroup.Item>
-                            <ListGroup.Item>
+                            <ListGroup.Item onclick={() => setControl('manages-packages')} className="dash-item">
+                                Manage Packages
+                            </ListGroup.Item>
+                            <ListGroup.Item onclick={() => setControl('add-package')} className="dash-item">
                                 Add New Package
                             </ListGroup.Item>
                         </ListGroup>
@@ -34,72 +50,18 @@ const Dashboard = () => {
                 </Col>
                 <Col xs={12} sm={6} md={8}>
                     <div className="bg-light">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Phill</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Mark</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Jacob</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>Phill</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>Mark</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8</th>
-                                    <td>Jacob</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">9</th>
-                                    <td>Phill</td>
-                                    <td>abc@xyz.com</td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        {
+                            control === 'add-package' && <AddPackage></AddPackage>
+                        }
+                        {
+                            control === 'manage-orders' && <AllBooking></AllBooking>
+                        }
+                        {
+                            control === 'my-orders' && <MyBooking></MyBooking>
+                        }
+                        {/* {
+                            control === 'manages-packages' && <AddPackage></AddPackage>
+                        } */}
                     </div>
                 </Col>
             </Row>

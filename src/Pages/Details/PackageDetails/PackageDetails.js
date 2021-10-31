@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import coverImg from '../../../images/demo-cover.jpg'
 
 const PackageDetails = () => {
     const { packgId } = useParams();
 
     const [packg, setPackage] = useState({});
-    const { _id, title, location, img, description, price, people, day, night } = packg;
+    const { title, location, img, description, price, people, day, night } = packg;
 
     useEffect(() => {
         fetch(`http://localhost:5000/packages/details/${packgId}`)
+            .then(res => res.json())
+            .then(data => setPackage(data));
+    }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/discount-offers/${packgId}`)
             .then(res => res.json())
             .then(data => setPackage(data));
     }, []);
@@ -18,22 +23,24 @@ const PackageDetails = () => {
         <div className="container my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Package Details</h2>
             <div className="row">
-                <h1>{title}</h1>
+                <h1 className="fs-2 fw-bold text-info text-uppercase">{title}</h1>
                 <div className="col-8 my-3 rounded-3">
                     <img className="img-fluid rounded-3" src={img} alt="" />
-                    <p className="my-3">{description}</p>
-                    <p className="my-3">{description}</p>
-                    <p className="my-3">{description}</p>
+                    <div className="my-4">
+                        <p>{description}</p>
+                        <p>{description}</p>
+                        <p>{description}</p>
+                    </div>
                 </div>
 
                 <div className="col-4 my-3">
                     <div className="bg-dark text-light p-4 rounded-3">
                         <p className="fs-4 fw-bold">{location}</p>
                         <h2>${price} <span className="fs-6">/per person</span></h2>
-                        <p>{day} days / {night} night</p>
+                        <p>{day} DAYS / {night} NIGHT</p>
                         <p>{people} People</p>
                         <Link to="/booking">
-                            <button className="btn btn-light">Book Now</button>
+                            <button className="btn btn-outline-light">Book Now</button>
                         </Link>
                     </div>
                     <div className="bg-light my-3 px-2 py-4 rounded-3">

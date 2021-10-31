@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import './AddPackage.css';
 
 const AddPackage = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
     const onSubmit = data => {
-        console.log(data)
         fetch(`http://localhost:5000/add-package`, {
             method: 'POST',
             headers: {
@@ -15,22 +15,24 @@ const AddPackage = () => {
         })
             .then(res => res.json())
             .then(result => console.log(result));
+        alert('New package added successfully');
+        reset();
     };
 
     return (
-        <div className="container my-5">
-            <h3 className="text-center fs-1 fw-bold text-secondary my-5">Add New Tour Package</h3>
+        <div className="container">
+            <h3 className="text-center fs-3 fw-bold text-info mb-4">Add New Tour Package</h3>
 
             <form onSubmit={handleSubmit(onSubmit)} className="add-package-form">
                 <input {...register("title", { required: true })} placeholder="Tour package title" />
                 <input {...register("location", { required: true })} placeholder="Tour destination" />
-                {/* <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
+                <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
                 <input {...register("description", { required: true })} placeholder="Tour description" />
                 <input type="number" {...register("price", { required: true })} placeholder="Tour package price" />
                 <input type="number" {...register("people", { required: true })} placeholder="Specific number of people for the tour" />
                 <input type="number" {...register("day", { required: true })} placeholder="How many days" />
-                <input type="number" {...register("night", { required: true })} placeholder="How many night" /> */}
-                <input type="submit" />
+                <input type="number" {...register("night", { required: true })} placeholder="How many night" />
+                <input type="submit" value="Add Package" className="btn btn-primary" />
             </form>
         </div>
     );

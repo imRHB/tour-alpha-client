@@ -1,0 +1,12 @@
+.add-package-form {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-package-form input {
+    margin: 8px;
+    padding: 4px;
+    
+}

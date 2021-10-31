@@ -1,0 +1,7 @@
+.dash-item {
+    cursor: pointer;
+}
+.dash-item:hover {
+    color: #333;
+    background-color: #eef;
+}

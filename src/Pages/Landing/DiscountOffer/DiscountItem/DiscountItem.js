@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const DiscountItem = (props) => {
-    const { title, img, location, description, price, offerPrice, people, day, night } = props.discItem;
+    const { _id, title, img, location, description, price, offerPrice } = props.discItem;
 
     return (
         <Col>
@@ -12,21 +12,23 @@ const DiscountItem = (props) => {
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>
-                        <p>{location}</p>
+                        <p className="fs-4 fw-bold">{location}</p>
                         <p>{description.slice(0, 100)} . . .</p>
                     </Card.Text>
                     <Card.Text>
                         <div className="d-flex justify-content-between fs-3 fw-bold">
-                            <p className="text-success">${offerPrice}</p>
+                            <p className="text-info">${offerPrice}</p>
                             <p className="text-danger"><strike>${price}</strike></p>
                         </div>
                     </Card.Text>
                     <Card.Text>
                         <div className="d-flex justify-content-between">
-                            <Link to="/details">
-                                <button className="btn btn-outline-secondary">Details</button>
+                            <Link to={`/packages/details/${_id}`}>
+                                <button className="btn btn-outline-secondary">Check Now</button>
                             </Link>
-                            <button className="btn btn-outline-success">Book Now</button>
+                            <Link to={`/packages/booking/${_id}`}>
+                                <button className="btn btn-outline-success">Book Now</button>
+                            </Link>
                         </div>
                     </Card.Text>
                 </Card.Body>
