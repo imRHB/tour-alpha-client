@@ -39,15 +39,15 @@ function App() {
             <Route exact path="/packages">
               <TourPackage></TourPackage>
             </Route>
-            <Route exact path="/packages/:packgId">
+            <PrivateRoute exact path="/packages/:packgId">
               <PackageDetails></PackageDetails>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/discount-package">
               <DiscountPackages></DiscountPackages>
             </Route>
-            <Route exact path="/discount-package/:packgId">
+            <PrivateRoute exact path="/discount-package/:packgId">
               <DiscountPackDetails></DiscountPackDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>
