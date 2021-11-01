@@ -8,6 +8,7 @@ const AddPackage = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
+        data.status = 'Pending';
         fetch(`https://shrieking-goosebumps-58774.herokuapp.com/add-package`, {
             method: 'POST',
             headers: {
@@ -32,7 +33,7 @@ const AddPackage = () => {
                     <Nav className="flex-column dash-nav">
                         <NavLink to="/dashboard">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
-                        <NavLink to="/my-Booking">My Booking</NavLink>
+                        <NavLink to="/my-booking">My Booking</NavLink>
                         <NavLink to="/add-package">Add Package</NavLink>
                     </Nav>
                 </Col>
@@ -59,9 +60,3 @@ const AddPackage = () => {
 };
 
 export default AddPackage;
-
-
-/*
-formState: { errors }
-cut from useFor(), destructuring
-*/

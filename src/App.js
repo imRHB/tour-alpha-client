@@ -36,6 +36,7 @@ function App() {
               <Home></Home>
             </Route>
 
+            {/* Main Pages */}
             <Route exact path="/packages">
               <TourPackage></TourPackage>
             </Route>
@@ -55,6 +56,7 @@ function App() {
               <Contact></Contact>
             </Route>
 
+            {/* User Interaction Private Routes */}
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
@@ -71,6 +73,7 @@ function App() {
               <AddPackage></AddPackage>
             </PrivateRoute>
 
+            {/* User Login / Registration */}
             <Route path="/login">
               <Login></Login>
             </Route>
@@ -78,6 +81,7 @@ function App() {
               <Register></Register>
             </Route>
 
+            {/* Not found */}
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>

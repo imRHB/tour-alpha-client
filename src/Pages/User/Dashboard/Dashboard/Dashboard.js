@@ -15,7 +15,7 @@ const Dashboard = () => {
                     <Nav className="flex-column dash-nav">
                         <NavLink to="/manage-packages">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
-                        <NavLink to="/my-Booking">My Booking</NavLink>
+                        <NavLink to="/my-booking">My Booking</NavLink>
                         <NavLink to="/add-package">Add Package</NavLink>
                     </Nav>
                 </Col>
