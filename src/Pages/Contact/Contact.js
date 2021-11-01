@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const Contact = () => {
+
     return (
         <div className="container my-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Contact Us</h2>
@@ -16,7 +17,6 @@ const Contact = () => {
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" />
                     </Form.Group>
-
                 </Row>
 
                 <Row className="mb-3">

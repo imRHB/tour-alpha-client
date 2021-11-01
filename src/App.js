@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AuthProvider from './contexts/AuthProvider';
 import About from './Pages/About/About';
-import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Contact/Contact';
 import PackageDetails from './Pages/Details/PackageDetails/PackageDetails';
 import Home from './Pages/Landing/Home/Home';
@@ -17,10 +16,10 @@ import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
 import AddPackage from './Pages/User/Dashboard/AddPackage/AddPackage';
 import DiscountPackages from './Pages/Landing/DiscountOffer/DiscountPackages/DiscountPackages';
 import DiscountPackDetails from './Pages/Details/DiscountPackDetails/DiscountPackDetails';
-import './App.css';
 import MyBooking from './Pages/User/Dashboard/MyBooking/MyBooking';
 import AllBooking from './Pages/User/Dashboard/AllBooking/AllBooking';
 import ManagePackages from './Pages/User/Dashboard/ManagePackages/ManagePackages';
+import './App.css';
 
 function App() {
 
@@ -36,6 +35,7 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+
             <Route exact path="/packages">
               <TourPackage></TourPackage>
             </Route>

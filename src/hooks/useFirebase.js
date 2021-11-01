@@ -21,7 +21,7 @@ const useFirebase = () => {
                 setUser(result.user);
             })
             .catch(error => {
-                setError(error.message)
+                setError(error.message);
             })
             .finally(() => {
                 setLoading(false);
@@ -34,7 +34,7 @@ const useFirebase = () => {
                 setUser(result.user);
             })
             .catch(error => {
-                setError(error.message)
+                setError(error.message);
             })
             .finally(() => {
                 setLoading(false);

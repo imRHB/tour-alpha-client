@@ -2,7 +2,6 @@ import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebase';
 import './Register.css';
 
 const googleIcon = <FontAwesomeIcon icon={faGoogle} />;

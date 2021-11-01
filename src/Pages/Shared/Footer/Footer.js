@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Footer.css';
 import logo from '../../../images/logo.png';
+import './Footer.css';
 
 const envelopeIcon = <FontAwesomeIcon icon={faEnvelope} />;
 const phoneIcon = <FontAwesomeIcon icon={faPhoneSquareAlt} />;

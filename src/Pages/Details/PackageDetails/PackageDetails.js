@@ -5,13 +5,13 @@ import { useParams } from 'react-router-dom';
 const PackageDetails = () => {
     const { packgId } = useParams();
 
-    const [packg, setPackage] = useState({});
+    const [packg, setPackg] = useState({});
     const { title, location, img, description, price, people, day, night } = packg;
 
     useEffect(() => {
         fetch(`http://localhost:5000/packages/${packgId}`)
             .then(res => res.json())
-            .then(data => setPackage(data));
+            .then(data => setPackg(data));
     }, []);
 
     const handlePackageBooking = packg => {
@@ -23,7 +23,9 @@ const PackageDetails = () => {
             body: JSON.stringify(packg)
         })
             .then(res => res.json())
-            .then(result => console.log(result));
+            .then(result => {
+                console.log(result);
+            });
         alert('You\'ve booked the package successfully. Check in all booking page.');
     };
 
