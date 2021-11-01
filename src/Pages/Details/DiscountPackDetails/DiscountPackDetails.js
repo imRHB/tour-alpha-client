@@ -23,7 +23,9 @@ const DiscountPackDetails = () => {
             body: JSON.stringify(diskPack)
         })
             .then(res => res.json())
-            .then(result => console.log(result));
+            .then(result => {
+
+            });
         alert('You\'ve booked the package successfully. Check in all booking page.');
     };
 

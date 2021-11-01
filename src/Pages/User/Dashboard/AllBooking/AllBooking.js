@@ -6,6 +6,8 @@ import useAuth from '../../../../hooks/useAuth';
 const AllBooking = () => {
     const [bookedPacks, setBookedPacks] = useState([]);
 
+    const [status, setStatus] = useState('Pending');
+
     const { user } = useAuth();
 
     useEffect(() => {
@@ -67,8 +69,8 @@ const AllBooking = () => {
                                         <td>{bookedPack.title}</td>
                                         <td>{user?.email}</td>
                                         <td>{bookedPack.location}</td>
-                                        <td>{bookedPack.status}</td>
-                                        <td><button className="btn btn-success">Approve</button></td>
+                                        <td>{status}</td>
+                                        <td><button onClick={() => setStatus('Approved')} className="btn btn-success">Approve</button></td>
                                         <td><button onClick={() => handleBookedPack(bookedPack._id)} className="btn btn-danger">Remove</button></td>
                                     </tr>)
                                 }
