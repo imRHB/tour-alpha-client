@@ -1,7 +1,6 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 
@@ -10,12 +9,7 @@ const githubIcon = <FontAwesomeIcon icon={faGithub} />;
 
 const Login = () => {
     const { user, signInWithGoogle, signInWithGithub, logout } = useAuth();
-    /* 
-        const history = useHistory();
-        const location = useLocation();
-    
-        const redirect_uri = location.state?.from || '/home';
-     */
+
     return (
         <div className="container my-5 form-container">
             <div className="shadow-sm rounded-3 border border-1 mx-auto user-form">

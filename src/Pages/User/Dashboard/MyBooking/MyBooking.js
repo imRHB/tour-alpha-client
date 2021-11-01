@@ -6,6 +6,8 @@ import useAuth from '../../../../hooks/useAuth';
 const MyBooking = () => {
     const [bookedPacks, setBookedPacks] = useState([]);
 
+    const [status, setStatus] = useState('Pending');
+
     const { user } = useAuth();
 
     useEffect(() => {
@@ -47,7 +49,7 @@ const MyBooking = () => {
                 <Col className="col-md-12 col-lg-8 col-xl-8">
                     <div className="bg-light">
                         <h3 className="text-center fs-3 fw-bold text-info py-4">My Booking</h3>
-                        <table class="table table-hover">
+                        <table className="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -61,13 +63,15 @@ const MyBooking = () => {
                             </thead>
                             <tbody>
                                 {
-                                    bookedPacks.map((bookedPack, index) => <tr>
+                                    bookedPacks.map((bookedPack, index) => <tr
+                                        key={bookedPack._id}
+                                    >
                                         <th scope="row">{index + 1}</th>
                                         <td>{bookedPack.title}</td>
                                         <td>{user?.email}</td>
                                         <td>{bookedPack.location}</td>
-                                        <td>Pending</td>
-                                        <td><button className="btn btn-success">Approve</button></td>
+                                        <td>{status}</td>
+                                        <td><button onClick={() => setStatus('Approved')} className="btn btn-success">Approve</button></td>
                                         <td><button onClick={() => handleBookedPack(bookedPack._id)} className="btn btn-danger">Remove</button></td>
                                     </tr>)
                                 }

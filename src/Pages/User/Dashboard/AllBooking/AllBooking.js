@@ -50,7 +50,7 @@ const AllBooking = () => {
                 <Col className="col-md-12 col-lg-8 col-xl-8">
                     <div className="bg-light">
                         <h3 className="text-center fs-3 fw-bold text-info py-4">All Booking</h3>
-                        <table class="table table-hover">
+                        <table className="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -64,7 +64,9 @@ const AllBooking = () => {
                             </thead>
                             <tbody>
                                 {
-                                    bookedPacks.map((bookedPack, index) => <tr>
+                                    bookedPacks.map((bookedPack, index) => <tr
+                                        key={bookedPack._id}
+                                    >
                                         <th scope="row">{index + 1}</th>
                                         <td>{bookedPack.title}</td>
                                         <td>{user?.email}</td>

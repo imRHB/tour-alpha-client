@@ -45,7 +45,7 @@ const ManagePackages = () => {
                 <Col className="col-md-12 col-lg-8 col-xl-8">
                     <div className="bg-light">
                         <h3 className="text-center fs-3 fw-bold text-info py-4">Available Packages</h3>
-                        <table class="table table-hover">
+                        <table className="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
