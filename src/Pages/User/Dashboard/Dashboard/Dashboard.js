@@ -10,8 +10,8 @@ const Dashboard = () => {
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Dashboard</h2>
             <hr />
 
-            <Row xs={12} sm={12} md={8} lg={8}>
-                <Col className="col-md-12 col-lg-4 col-xl-4">
+            <Row xs={1} sm={1} md={1} lg={2} xl={2} className="g-3">
+                <Col className="col-12 col-md-12 col-lg-4 col-xl-4">
                     <Nav className="flex-column dash-nav">
                         <NavLink to="/manage-packages">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
@@ -20,8 +20,8 @@ const Dashboard = () => {
                     </Nav>
                 </Col>
 
-                <Col className="col-md-12 col-lg-8 col-xl-8">
-                    <div className="bg-light">
+                <Col className="col-12 col-md-12 col-lg-8 col-xl-8">
+                    <div className="container bg-light">
                         {/* some space */}
                     </div>
                 </Col>

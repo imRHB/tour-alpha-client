@@ -36,8 +36,8 @@ const MyBooking = () => {
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Dashboard</h2>
             <hr />
 
-            <Row xs={12} sm={12} md={8} lg={8}>
-                <Col className="col-md-12 col-lg-4 col-xl-4">
+            <Row xs={1} sm={1} md={1} lg={2} xl={2} className="g-3">
+                <Col className="col-12 col-md-12 col-lg-4 col-xl-4">
                     <Nav className="flex-column dash-nav">
                         <NavLink to="/dashboard">Manage Packages</NavLink>
                         <NavLink to="/all-booking">All Booking</NavLink>
@@ -46,8 +46,8 @@ const MyBooking = () => {
                     </Nav>
                 </Col>
 
-                <Col className="col-md-12 col-lg-8 col-xl-8">
-                    <div className="bg-light">
+                <Col className="col-12 col-md-12 col-lg-8 col-xl-8">
+                    <div className="container bg-light">
                         <h3 className="text-center fs-3 fw-bold text-info py-4">My Booking</h3>
                         <table className="table table-hover">
                             <thead>
@@ -55,7 +55,6 @@ const MyBooking = () => {
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Location</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                     <th scope="col">Remove</th>
@@ -69,7 +68,6 @@ const MyBooking = () => {
                                         <th scope="row">{index + 1}</th>
                                         <td>{bookedPack.title}</td>
                                         <td>{user?.email}</td>
-                                        <td>{bookedPack.location}</td>
                                         <td>{status}</td>
                                         <td><button onClick={() => setStatus('Approved')} className="btn btn-success">Approve</button></td>
                                         <td><button onClick={() => handleBookedPack(bookedPack._id)} className="btn btn-danger">Remove</button></td>
