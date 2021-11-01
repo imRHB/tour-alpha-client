@@ -54,7 +54,7 @@ const MyBooking = () => {
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
-                                    {/* <th scope="col">Email</th> */}
+                                    <th scope="col">Location</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                     <th scope="col">Remove</th>
@@ -67,7 +67,7 @@ const MyBooking = () => {
                                     >
                                         <th scope="row">{index + 1}</th>
                                         <td>{bookedPack.title}</td>
-                                        {/* <td>{user?.email}</td> */}
+                                        <td>{bookedPack.location}</td>
                                         <td>{status}</td>
                                         <td><button onClick={() => setStatus('Approved')} className="btn btn-success">Approve</button></td>
                                         <td><button onClick={() => handleBookedPack(bookedPack._id)} className="btn btn-danger">Remove</button></td>
