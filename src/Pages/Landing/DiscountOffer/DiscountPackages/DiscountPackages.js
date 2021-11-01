@@ -6,7 +6,7 @@ const DiscountPackages = () => {
     const [discountPacks, setDiscountPacks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/discount-package')
+        fetch('https://shrieking-goosebumps-58774.herokuapp.com/discount-package')
             .then(res => res.json())
             .then(data => setDiscountPacks(data));
     }, []);

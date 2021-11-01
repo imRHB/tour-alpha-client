@@ -9,13 +9,13 @@ const PackageDetails = () => {
     const { title, location, img, description, price, people, day, night } = packg;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/${packgId}`)
+        fetch(`https://shrieking-goosebumps-58774.herokuapp.com/packages/${packgId}`)
             .then(res => res.json())
             .then(data => setPackg(data));
     }, []);
 
     const handlePackageBooking = packg => {
-        fetch(`http://localhost:5000/booked-packages`, {
+        fetch(`https://shrieking-goosebumps-58774.herokuapp.com/booked-packages`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

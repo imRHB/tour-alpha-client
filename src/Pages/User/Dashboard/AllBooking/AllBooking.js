@@ -9,7 +9,7 @@ const AllBooking = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch('http://localhost:5000/booked-packages')
+        fetch('https://shrieking-goosebumps-58774.herokuapp.com/booked-packages')
             .then(res => res.json())
             .then(data => setBookedPacks(data));
     }, [bookedPacks]);
@@ -18,7 +18,7 @@ const AllBooking = () => {
         const removeConfirmation = window.confirm('Do you really want to removed the package from queue?');
 
         if (removeConfirmation) {
-            const bookedPackUrl = `http://localhost:5000/booked-packages/${packgId}`;
+            const bookedPackUrl = `https://shrieking-goosebumps-58774.herokuapp.com/booked-packages/${packgId}`;
             fetch(bookedPackUrl, {
                 method: 'DELETE'
             })

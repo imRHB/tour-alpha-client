@@ -6,7 +6,7 @@ const ManagePackages = () => {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
+        fetch('https://shrieking-goosebumps-58774.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [packages]);
@@ -16,7 +16,7 @@ const ManagePackages = () => {
         const deleteConfirmation = window.confirm('Do you really want to delete the package? It can\'t be undone.');
 
         if (deleteConfirmation) {
-            const packgUrl = `http://localhost:5000/packages/${packgId}`;
+            const packgUrl = `https://shrieking-goosebumps-58774.herokuapp.com/packages/${packgId}`;
             fetch(packgUrl, {
                 method: 'DELETE'
             })

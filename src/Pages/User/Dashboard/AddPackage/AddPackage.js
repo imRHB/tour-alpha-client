@@ -8,7 +8,7 @@ const AddPackage = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/add-package`, {
+        fetch(`https://shrieking-goosebumps-58774.herokuapp.com/add-package`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

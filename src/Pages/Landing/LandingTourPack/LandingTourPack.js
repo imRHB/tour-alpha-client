@@ -6,7 +6,7 @@ const LandingTourPack = () => {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
+        fetch('https://shrieking-goosebumps-58774.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setPackages(data.slice(0, 6)));
     }, []);

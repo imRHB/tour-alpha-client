@@ -8,7 +8,7 @@ const TeamMember = () => {
     const [team, setTeam] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/team')
+        fetch('https://shrieking-goosebumps-58774.herokuapp.com/team')
             .then(res => res.json())
             .then(data => setTeam(data));
     }, []);

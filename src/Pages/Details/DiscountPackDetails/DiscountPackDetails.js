@@ -9,13 +9,13 @@ const DiscountPackDetails = () => {
     const { title, location, img, description, price, offerPrice, people, day, night } = diskPack;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/discount-package/${packgId}`)
+        fetch(`https://shrieking-goosebumps-58774.herokuapp.com/discount-package/${packgId}`)
             .then(res => res.json())
             .then(data => setDiskPack(data));
     }, []);
 
     const handlePackageBooking = diskPack => {
-        fetch(`http://localhost:5000/booked-packages`, {
+        fetch(`https://shrieking-goosebumps-58774.herokuapp.com/booked-packages`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
